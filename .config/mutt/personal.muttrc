@@ -1,0 +1,10 @@
+# PERSONAL MUTTRC
+
+macro index,pager i1 '<sync-mailbox><enter-command>source /home/notami/.config/mutt/accounts/gmail.muttrc<enter><change-folder>!<enter>'
+source /home/notami/.config/mutt/accounts/gmail.muttrc
+macro index,pager i2 '<sync-mailbox><enter-command>source /home/notami/.config/mutt/accounts/gmail.muttrc<enter><change-folder>!<enter>'
+
+macro index,pager gl "<change-folder>=Client.l3<enter>" "Go to l3"
+macro index,pager gr "<change-folder>=[Gmail].Rohr<enter>" "Go to Rohr"
+macro index,pager \cb ": unset wait_key; set pipe_decode\n|w3m\n: set wait_key; unset pipe_decode\n" "call w3m to extract URLs out of a message"
+macro index,pager o "v<right>m" "view message in browser"

@@ -1,0 +1,2 @@
+macro index,pager i1 '<sync-mailbox><enter-command>source "/home/notami/.config/mutt"/accounts/gmail.muttrc<enter><change-folder>!<enter>;<check-stats>'
+source /home/notami/.config/mutt/accounts/gmail.muttrc
