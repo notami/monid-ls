@@ -1,0 +1,9 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) $TERMINAL -e nmtui ;;
+esac
+
+[ "$(cat /sys/class/net/w*/operstate)" = 'down' ] && echo 📡 && exit
+
+grep ^w /proc/net/wireless | awk '{ print "📶", int($3 * 100 / 70) "%" }'
