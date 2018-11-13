@@ -1,0 +1,26 @@
+[general]
+accounts = gmail
+starttls = yes
+ssl = yes
+pythonfile = ~/.config/mutt/credentials/imappwd.py
+
+
+
+[Account gmail]
+localrepository = gmail-local
+remoterepository = gmail-remote
+
+[Repository gmail-remote]
+auth_mechanisms = LOGIN
+type = Gmail
+remoteuser = notami@gmail.com
+remotepasseval = mailpasswd("gmail")
+remoteport = 993
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail']
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+ssl_version = tls1_2
+
+
+[Repository gmail-local]
+type = Maildir
+localfolders = ~/.mail/gmail

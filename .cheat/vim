@@ -1,0 +1,11 @@
+# Vim Cheats
+#
+# Remove tags, keep content
+yitvatp
+What this does is:
+  y - yanks
+  it - the inside of the tag
+  vat - selects the entire tag
+  p - pastes the previously yanked text over it
+
+

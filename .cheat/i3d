@@ -1,0 +1,70 @@
+ng cli
+
+Example:
+***********************************************************************
+eyeD3 -a Integrity -A "Humanity Is The Devil" -t "Hollow" -n 2 song.mp3
+***********************************************************************
+
+With this command we’ve set the artist (-a/--artist), album (-A/--album), title (-t/--title), and track number (-n/--track-num) properties in the ID3 tag of the file. This is the standard interface that eyeD3 has always had in the past, therefore it is also the default plugin when no other is specified.
+
+The results of this command can be seen by running the eyeD3 with no options.
+
+$ eyeD3 song.mp3
+song.mp3      [ 3.06 MB ]
+-------------------------------------------------------------------------
+ID3 v2.4:
+title: Hollow
+artist: Integrity
+album: Humanity Is The Devil
+album artist: None
+track: 2
+-------------------------------------------------------------------------
+
+Options
+
+  -a STRING, --artist STRING
+                        Set the artist name.
+  -A STRING, --album STRING
+                        Set the album name.
+  -b STRING, --album-artist STRING
+                        Set the album artist name. 'Various Artists', for
+                        example. Another example is collaborations when the
+                        track artist might be 'Eminem featuring Proof' the
+                        album artist would be 'Eminem'.
+  -t STRING, --title STRING
+                        Set the track title.
+  -n NUM, --track NUM   Set the track number. Use 0 to clear.
+  -N NUM, --track-total NUM
+                        Set total number of tracks. Use 0 to clear.
+  --track-offset N      Increment/decrement the track number by [-]N. This
+                        option is applied after --track=N is set.
+  -d NUM, --disc-num NUM
+                        Set the disc number. Use 0 to clear.
+  -D NUM, --disc-total NUM
+                        Set total number of discs in set. Use 0 to clear.
+  -G GENRE, --genre GENRE
+                        Set the genre. If the argument is a standard ID3 genre
+                        name or number both will be set. Otherwise, any string
+                        can be used. Run 'eyeD3 --plugin=genres' for a list of
+                        standard ID3 genre names/ids.
+
+Adding album art
+
+eyeD3 --add-image "cover.jpg:FRONT_COVER" test.mp3
+Batch actions based on filename
+
+loop over the files using globbing, and substring expansion to capture characters from the filename:
+Track numbers
+
+***********************************************************************
+for f in *mp3; do
+    eyeD3 -n ${f:0:2} "$f"
+done
+
+***********************************************************************
+Song names
+
+***********************************************************************
+for f in *mp3; do
+    eyeD3 -t ${f:3} "$f"
+done
