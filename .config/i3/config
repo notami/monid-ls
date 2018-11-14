@@ -82,6 +82,8 @@ exec --no-startup-id rm -f ~/.larbs/.recording
 exec --no-startup-id nm-applet
 # mpd startup
 exec --no-startup-id mpd
+# Greenclip
+exec_always --no-startup-id greenclip daemon &
 
 # Set Xresources colors:
 set_from_resource $darkblack	color0  #000000
@@ -213,7 +215,7 @@ bindsym $mod+Shift+z		gaps outer current minus 5
 bindsym $mod+x			exec --no-startup-id lockscreen
 bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
 
-bindsym $mod+c			exec --no-startup-id camtoggle
+bindsym $mod+Shift+c			exec --no-startup-id camtoggle
 ##bindsym $mod+Shift+c
 
 bindsym $mod+v			exec $term -e ncmpcpp -s visualizer
@@ -228,12 +230,14 @@ bindsym $mod+n			exec $term -e newspod
 bindsym $mod+m 			exec --no-startup-id $term -e ncmpcpp
 bindsym $mod+Shift+m		exec --no-startup-id lmc mute
 
+# start rofi clipboard
 bindsym Shift+Control+space	exec --no-startup-id rofi -show run
-bindsym Mod1+Control+e	exec --no-startup-id et
+bindsym $mod+c exec  --no-startup-id ~/.scripts/rofi-bangs.sh
 
 bindsym control+mod1+q exec --no-startup-id qutebrowser
 bindsym control+mod1+k exec --no-startup-id Kodi
 
+bindsym Mod1+Control+e	exec --no-startup-id et
 bindsym control+mod1+x exec --no-startup-id keepassxc move position center
 
 # #---Scratch Bindings---# #
