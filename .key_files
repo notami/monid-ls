@@ -1,5 +1,6 @@
 bf	~/.key_files
 bd	~/.key_directories
+bc  ~/.cache/greenclip.staticHistory
 bls /mnt/www/nginx/notes/articles/tmp.md
 cfa ~/.oh-my-zsh/custom/alias.zsh
 cfb	~/.bashrc

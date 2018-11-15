@@ -1,5 +1,6 @@
-w !sudo tee % 
+w !sudo tee %
  > /dev/null 2>&1 &
+eval "$(ssh-agent -s)"
 notami@gmail.com
 g1notami@zoominternet.net
 nohup greenclip daemon > /dev/null 2>&1 &
