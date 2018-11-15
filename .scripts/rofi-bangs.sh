@@ -19,15 +19,15 @@ COMMANDS["apps"]="rofi -combi-modi window,drun -show combi"
 LABELS["apps"]=""
 
 # open bookmarks
-COMMANDS["bookmarks"]="~/.scripts/rofi-scripts-collection/rofi-surfraw-bookmarks.sh"
+COMMANDS["bookmarks"]="~/.scripts/rofi-surfraw-bookmarks.sh"
 LABELS["bookmarks"]=""
 
 # search local files
-COMMANDS["locate"]="~/.scripts/rofi-scripts-collection/rofi-locate.sh"
+COMMANDS["locate"]="~/.scripts/rofi-locate.sh"
 LABELS["locate"]=""
 
 # open custom web searches
-COMMANDS["websearch"]="~/.scripts/rofi-scripts-collection/rofi-surfraw-websearch.sh"
+COMMANDS["websearch"]="~/.scripts/rofi-surfraw-websearch.sh"
 LABELS["websearch"]=""
 
 # greenclip clipboard history
