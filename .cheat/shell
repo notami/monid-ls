@@ -1,0 +1,3 @@
+full-path recursive listing, one line per file
+find "$PWD"
+tree -fia -L 5
