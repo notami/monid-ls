@@ -1,3 +1,4 @@
 If you want to list all the files currently being tracked under the branch master, you could use this command:
-git ls-tree -r master --name-only
-
+  git ls-tree -r master --name-only
+Merge selected files between branches
+  git merge --no-ff --no-commit branchX
