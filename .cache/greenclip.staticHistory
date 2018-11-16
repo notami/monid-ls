@@ -1,3 +1,4 @@
+config ls-tree -r master --name-only >> ~/git-tree-master.txt
 w !sudo tee %
  > /dev/null 2>&1 &
 eval "$(ssh-agent -s)"
