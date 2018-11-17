@@ -48,6 +48,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'dylanaraps/wal.vim'
 Plugin 'deviantfero/wpgtk.vim'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'will133/vim-dirdiff'
 " Plugin 'MikeCoder/markdown-preview.vim'
 
 " All of your Plugins must be added before the following line
