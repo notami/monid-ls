@@ -1,3 +1,4 @@
+sudo mount -o rw,users,umask=000 /dev/sdd1 /mnt/usb
 config ls-tree -r master --name-only >> ~/git-tree-master.txt
 w !sudo tee %
  > /dev/null 2>&1 &
