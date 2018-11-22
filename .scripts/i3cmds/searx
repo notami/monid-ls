@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Gives a dmenu prompt to search Searx.
+# Without input, will open Searx.com.
+# Anything else, it search it.
+
+pgrep -x dmenu && exit
+
+choice=$(echo "🔎" | dmenu -i -p "Search Searx:") || exit 1
+
+if [ "$choice" = "🔎"  ]; then
+	$BROWSER "https://searx.me/search"
+else
+	$BROWSER "https://searx.me/search?q=$choice&t=ffab&atb=v1-1"
+fi
