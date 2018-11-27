@@ -312,6 +312,7 @@ for_window [class="Gimp"] move workspace $ws5
 for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
 for_window [title="Default - Wine desktop"] floating enable
 for_window [class="keepassxc"] floating enable, resize set 700 600
+for_window [class="TeamViewer"] floating enable, resize set 600 600
 
 
 # First I have a tmux window used for background scripts.
