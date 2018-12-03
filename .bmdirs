@@ -1,0 +1,26 @@
+# You can add comments to these files with #
+a ~/Data
+d	~/Documents
+w	~/Downloads
+m	~/Music
+p	~/Pictures
+v	~/Videos
+c	~/.config
+s	~/.scripts
+mn /mnt
+mm /mnt/Audio/Music
+md	/mnt/Data/Docs
+mdc	/mnt/Data/Docs/Client
+mdn	/mnt/Data/Docs/NID
+mdt	/mnt/Data/Docs/tmp
+mi /mnt/Images
+mvm	/mnt/Video/Movies
+mvt /mnt/Video/TV
+mvy	/mnt/Video/yoga
+ma /mnt/www/nginx/notes/articles
+rm /run/media
+bs /mnt/Data/Docs/Client/DBS/dbsaurer.com/BU-DBS
+lg /mnt/Data/Docs/Client/LegacyIII/legacythree.org/BU-L3
+mh /mnt/Data/Docs/Client/MiraclesHappen/miraclesupholstery.com/BU-MH
+ol /mnt/Data/Docs/Client/One Love No Boundaries/olnb.org/BU-OLNB
+us /usr/share
