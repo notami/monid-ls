@@ -2,7 +2,7 @@
 "
 set nocompatible			" Don't try to be vi compatible
 filetype off				" Helps force plugins to load correctly when it is turned back on below
-set modelines=0				" helps security
+set modelines=5				" helps security
 "
 
 " VUNDLE "{{{
@@ -48,6 +48,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'dylanaraps/wal.vim'
 Plugin 'deviantfero/wpgtk.vim'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'mboughaba/i3config.vim'
 " Plugin 'MikeCoder/markdown-preview.vim'
 
 " All of your Plugins must be added before the following line
