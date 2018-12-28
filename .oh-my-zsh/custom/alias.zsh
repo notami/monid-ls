@@ -154,7 +154,7 @@ alias rsmhf="rsync -ruvzhe ssh --progress "/home/notami/Documents/MyDocuments/Cl
 alias rsold="rsync -auvzhe ssh --progress olnb@104.255.96.68:/home/olnb/public_html/ "/home/notami/Documents/MyDocuments/Client/One Love No Boundaries/olnb.org/BU-OLNB/LocalMirror-OLNB/""
 alias rsolf="rsync -ruvzhe ssh --progress "/home/notami/Documents/MyDocuments/Client/One Love No Boundaries/" "/mnt/Data/Docs/Client/One Love No Boundaries/""
 alias rshome="rsync -aP --exclude-from=/var/tmp/ignorelist -e ssh /home/$USER/ notami@freenas.local:/mnt/vol2/Data/Archive/monid"
-alias rspix="rsync -av /home/notami/Pictures/favs/* /mnt/Data/Docs/tmp/favs && diff -rq /mnt/Data/Docs/tmp/favs ~/Pictures/favs"
+alias rspix="rsync -av /mnt/Data/Docs/tmp/favs/* /home/notami/Pictures/favs/ && diff -rq /mnt/Data/Docs/tmp/favs ~/Pictures/favs"
 
 
 ####################################
