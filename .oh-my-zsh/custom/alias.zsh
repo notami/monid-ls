@@ -145,17 +145,15 @@ alias daily="tma daily"
 #################
 # ### rsync ### #
 #################
-alias rsdbsd="rsync -auvzhe ssh --progress dbsaurer@104.255.96.68:/home/dbsaurer/public_html/ /home/notami/Documents/MyDocuments/Client/DBS/dbsaurer.com/BU-DBS/LocalMirror-DBS/"
+alias rsdbsd="rsync -auvzhe ssh --progress notami@dbsaurer.com:/var/www/html/ /home/notami/Documents/MyDocuments/Client/DBS/dbsaurer.com/BU-DBS/LocalMirror-DBS/"
 alias rsdbsf="rsync -ruvzhe ssh --progress "/home/notami/Documents/MyDocuments/Client/DBS/" "/mnt/Data/Docs/Client/DBS/""
-alias rsl3d="rsync -auvzhe ssh --progress legacythree@104.255.96.68:/home/legacythree/public_html/ /home/notami/Documents/MyDocuments/Client/LegacyIII/legacythree.org/BU-L3/LocalMirror-L3/"
-alias rsl3f="rsync -ruvzhe ssh --progress "/home/notami/Documents/MyDocuments/Client/LegacyIII/" "/mnt/Data/Docs/Client/LegacyIII/""
-alias rsmhd="rsync -auvzhe ssh --progress miraclesupholstery@104.255.96.68:/home/miraclesupholstery/public_html/ /home/notami/Documents/MyDocuments/Client/MiraclesHappen/miraclesupholstery.com/BU-MH/LocalMirror-MH/"
+alias rsmhd="rsync -auvzhe ssh --progress notami@dbsaurer.com:/var/www/miraclesupholstery.com/html/ /home/notami/Documents/MyDocuments/Client/MiraclesHappen/miraclesupholstery.com/BU-MH/LocalMirror-MH/"
 alias rsmhf="rsync -ruvzhe ssh --progress "/home/notami/Documents/MyDocuments/Client/MiraclesHappen/" "/mnt/Data/Docs/Client/MiraclesHappen/""
-alias rsold="rsync -auvzhe ssh --progress olnb@104.255.96.68:/home/olnb/public_html/ "/home/notami/Documents/MyDocuments/Client/One Love No Boundaries/olnb.org/BU-OLNB/LocalMirror-OLNB/""
+alias rsold="rsync -auvzhe ssh --progress notami@dbsaurer.com:/var/www/olnb.org/html/ "/home/notami/Documents/MyDocuments/Client/One Love No Boundaries/olnb.org/BU-OLNB/LocalMirror-OLNB/""
 alias rsolf="rsync -ruvzhe ssh --progress "/home/notami/Documents/MyDocuments/Client/One Love No Boundaries/" "/mnt/Data/Docs/Client/One Love No Boundaries/""
-alias rshome="rsync -aP --exclude-from=/var/tmp/ignorelist -e ssh /home/$USER/ notami@freenas.local:/mnt/vol2/Data/Archive/monid"
-alias rspix="rsync -av /mnt/Data/Docs/tmp/favs/* /home/notami/Pictures/favs/ && diff -rq /mnt/Data/Docs/tmp/favs ~/Pictures/favs"
 alias rsnot="rsync -avz -e 'ssh -i /home/notami/.ssh/nid-rsync' --progress –delete --exclude={/refDesk/,/tv-home/,index.html,indexSam.html,ex.txt,Vim-quickRef.pdf} /mnt/www/nginx/ notami@dbsaurer.com:/var/www/notami.us/html/"
+alias rshome="rsync -aP --exclude-from=/var/tmp/ignorelist -e ssh /home/$USER/ notami@freenas.local:/mnt/vol2/Data/Archive/monid"
+alias rspix="rsync -av -progress /mnt/Data/Docs/tmp/favs/* /home/notami/Pictures/favs/ && diff -rq /mnt/Data/Docs/tmp/favs ~/Pictures/favs"
 
 ####################################
 # Aliases for software managment #
