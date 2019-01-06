@@ -1,3 +1,7 @@
 [Default Applications]
 x-scheme-handler/magnet=transmission-remote.desktop
 x-scheme-handler/mailto=mutt.desktop;
+
+[Added Associations]
+application/xml+rss=vlc.desktop;
+text/csv=wps-office-et.desktop;

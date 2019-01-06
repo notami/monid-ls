@@ -13,7 +13,7 @@ scihub="http://sci-hub.tw/"
 [ -z "$1" ] && { "$TRUEBROWSER"; exit; }
 
 case "$1" in
-	*mkv|*webm|*mp4|*gif|*youtube.com*|*hooktube.com*)
+	*mkv|*webm|*mp4|*mp3|*gif|*youtube.com*|*hooktube.com*)
 		setsid mpv -quiet "$1" >/dev/null 2>&1 & ;;
 	*png|*jpg|*jpe|*jpeg)
 		setsid feh "$1" >/dev/null 2>&1 & ;;
