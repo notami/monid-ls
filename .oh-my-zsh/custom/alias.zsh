@@ -41,7 +41,8 @@ alias xpp="xprop | grep -i 'class'"
 ################################
 alias cs="config status"
 alias ca="config add"
-alias cc="config commit -m"
+alias cc="config commit"
+alias ccm="config commit -m"
 alias cp="config push"
 
 #####################
@@ -106,7 +107,6 @@ alias wwr="cd /mnt/www/nginx/refDesk/"
 alias wwt="cd /mnt/www/nginx/tv-home/"
 alias gam="cd /home/notami/Documents/ArchMerge-Nemesis/"
 alias gcf="cd /home/notami/.config"
-alias catc="cat ~/.scripts/configs"
 alias catf="cat ~/.scripts/folders"
 
 ###############
@@ -145,12 +145,12 @@ alias daily="tma daily"
 #################
 # ### rsync ### #
 #################
-alias rsdbsd="rsync -auvzhe ssh --progress notami@dbsaurer.com:/var/www/html/ /home/notami/Documents/MyDocuments/Client/DBS/dbsaurer.com/BU-DBS/LocalMirror-DBS/"
-alias rsdbsf="rsync -ruvzhe ssh --progress "/home/notami/Documents/MyDocuments/Client/DBS/" "/mnt/Data/Docs/Client/DBS/""
-alias rsmhd="rsync -auvzhe ssh --progress notami@dbsaurer.com:/var/www/miraclesupholstery.com/html/ /home/notami/Documents/MyDocuments/Client/MiraclesHappen/miraclesupholstery.com/BU-MH/LocalMirror-MH/"
-alias rsmhf="rsync -ruvzhe ssh --progress "/home/notami/Documents/MyDocuments/Client/MiraclesHappen/" "/mnt/Data/Docs/Client/MiraclesHappen/""
-alias rsold="rsync -auvzhe ssh --progress notami@dbsaurer.com:/var/www/olnb.org/html/ "/home/notami/Documents/MyDocuments/Client/One Love No Boundaries/olnb.org/BU-OLNB/LocalMirror-OLNB/""
-alias rsolf="rsync -ruvzhe ssh --progress "/home/notami/Documents/MyDocuments/Client/One Love No Boundaries/" "/mnt/Data/Docs/Client/One Love No Boundaries/""
+alias rsdbsd="rsync -auvzhe ssh --progress notami@dbsaurer.com:/var/www/html/ /mnt/Data/Docs/Client/DBS/dbsaurer.com/BU-DBS/LocalMirror-DBS/"
+# alias rsdbsf="rsync -ruvzhe ssh --progress "/home/notami/Documents/MyDocuments/Client/DBS/" "/mnt/Data/Docs/Client/DBS/""
+alias rsmhd="rsync -auvzhe ssh --progress notami@dbsaurer.com:/var/www/miraclesupholstery.com/html/ /mnt/Data/Docs/Client/MiraclesHappen/miraclesupholstery.com/BU-MH/LocalMirror-MH/"
+# alias rsmhf="rsync -ruvzhe ssh --progress "/home/notami/Documents/MyDocuments/Client/MiraclesHappen/" "/mnt/Data/Docs/Client/MiraclesHappen/""
+alias rsold="rsync -auvzhe ssh --progress notami@dbsaurer.com:/var/www/olnb.org/html/ /mnt/Data/Docs/Client/One\ Love\ No\ Boundaries/olnb.org/BU-OLNB/LocalMirror-OLNB/"
+# alias rsolf="rsync -ruvzhe ssh --progress "/home/notami/Documents/MyDocuments/Client/One Love No Boundaries/" "/mnt/Data/Docs/Client/One Love No Boundaries/""
 alias rsnot="rsync -avz -e 'ssh -i /home/notami/.ssh/nid-rsync' --progress –delete --exclude={/refDesk/,/tv-home/,index.html,indexSam.html,ex.txt,Vim-quickRef.pdf} /mnt/www/nginx/ notami@dbsaurer.com:/var/www/notami.us/html/"
 alias rshome="rsync -aP --exclude-from=/var/tmp/ignorelist -e ssh /home/$USER/ notami@freenas.local:/mnt/vol2/Data/Archive/monid"
 alias rspix="rsync -av -progress /mnt/Data/Docs/tmp/favs/* /home/notami/Pictures/favs/ && diff -rq /mnt/Data/Docs/tmp/favs ~/Pictures/favs"
