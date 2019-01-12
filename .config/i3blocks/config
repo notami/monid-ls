@@ -40,15 +40,15 @@ command=i3mail
 interval=180
 signal=12
 
-[memory]
-command=i3mem
-interval=30
-label=🧠
+#[memory]
+#command=i3mem
+#interval=30
+#label=🧠
 
-[cpu]
-command=i3cpu
-interval=15
-label=💻
+#[cpu]
+#command=i3cpu
+#interval=15
+#label=💻
 
 [volume]
 interval=once

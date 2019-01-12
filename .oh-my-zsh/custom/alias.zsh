@@ -113,9 +113,9 @@ alias catf="cat ~/.scripts/folders"
 # ### ssh ### #
 ###############
 alias ssh.f="ssh notami@freenas.local"
-alias ssh.d="ssh dbsaurer@dbsaurer.com"
-alias ssh.tv="ssh tv-am"
-alias ssh.nid="ssh nid-8164-am"
+alias ssh.d="ssh notami@dbsaurer.com"
+alias ssh.tv="ssh 192.168.1.129"
+alias ssh.nid="ssh 192.168.1.35"
 alias ssh.kt="ssh nid-kt.local"
 
 ####################
@@ -160,15 +160,15 @@ alias rspix="rsync -av -progress /mnt/Data/Docs/tmp/favs/* /home/notami/Pictures
 ####################################
 # pacman or pm
 alias pmsyu="sudo pacman -Syu --color=auto"
-alias pacman='sudo pacman --color auto'
-alias update='sudo pacman -Syu && echo Update Complete! | figlet'
+alias pacman='sudo pacman -color auto'
+alias update='ckre && pacman -Syu && ckre && echo Update Complete! | figlet'
 # pacaur or pc
 alias pcsyu="pacaur -Syu"
 alias pcsyua="yaourt -Syu --aur --noconfirm"
 # packer or pk
 alias pks="packer -S"
 alias pksn="packer -S --noconfirm --noedit"
-alias pksyu="packer -Syu  --noconfirm --noedit"
+alias pksyu="packer -Syu --noconfirm --noedit"
 alias tvstart="systemctl start teamviewerd.service"
 alias tvstop="systemctl stop teamviewerd.service"
 alias ckre="sudo python2.7 ~/.scripts/checkrestart.py"
@@ -244,5 +244,4 @@ alias -g LL="2>&1 | less"
 alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
-
 

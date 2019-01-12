@@ -73,6 +73,9 @@ filetype plugin indent on    " required
 
 let mapleader = (",")
 
+" SHEBANG
+inoremap SH #!/bin/bash
+
 " COLORS
 
 set t_Co=256
@@ -84,6 +87,12 @@ syntax enable				" Turn on syntax highlighting
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow
 	set splitright
+
+" Easier split nav
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Replace all is aliased to S.
 	nnoremap S :%s//g<Left><Left>
@@ -336,7 +345,7 @@ imap <leader>< < ><ESC>i
 nmap <C-Up> [e
 nmap <C-Down> ]e
 
-" Bubble multiple lines
+" Bubble Multiple Lines
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 

@@ -5,3 +5,4 @@ x-scheme-handler/mailto=mutt.desktop;
 [Added Associations]
 application/xml+rss=vlc.desktop;
 text/csv=wps-office-et.desktop;
+text/markdown=firefox.desktop;

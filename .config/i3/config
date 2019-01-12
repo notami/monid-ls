@@ -71,7 +71,7 @@ exec --no-startup-id dunst
 # Composite manager:
 exec --no-startup-id compton
 # Runs the key remapping scripts
-exec --no-startup-id ~/.scripts/remaps
+exec --no-startup-id ~/.scripts/tools/remaps
 # Unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
 # Run the script to update the mpd i3block on change.
@@ -82,6 +82,8 @@ exec --no-startup-id rm -f ~/.larbs/.recording
 exec --no-startup-id nm-applet
 # mpd startup
 exec --no-startup-id mpd
+# Podboat automatic queue and download
+exec_always --no-startup-id podentr
 # Greenclip
 exec_always --no-startup-id greenclip daemon &
 
