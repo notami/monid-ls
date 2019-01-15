@@ -27,6 +27,12 @@ alias fgrep='fgrep --color=auto'
 alias df='df -h'
 alias merge="xrdb -merge ~/.Xresources"
 
+#######
+# FUN #
+#######
+
+alias fishy="asciiquarium"
+
 ###################
 # ### general ### #
 ###################
@@ -160,7 +166,7 @@ alias rspix="rsync -av -progress /mnt/Data/Docs/tmp/favs/* /home/notami/Pictures
 ####################################
 # pacman or pm
 alias pmsyu="sudo pacman -Syu --color=auto"
-alias pacman='sudo pacman -color auto'
+alias pacman="sudo pacman --color=auto"
 alias update='ckre && pacman -Syu && ckre && echo Update Complete! | figlet'
 # pacaur or pc
 alias pcsyu="pacaur -Syu"

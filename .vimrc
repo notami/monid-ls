@@ -97,9 +97,6 @@ nnoremap <C-H> <C-W><C-H>
 " Replace all is aliased to S.
 	nnoremap S :%s//g<Left><Left>
 
-" Interpret .md files, etc. as .markdown
-	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-
 " Make calcurse notes markdown compatible:
 	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 
@@ -136,7 +133,7 @@ nnoremap <C-H> <C-W><C-H>
 	autocmd BufWritePre * %s/\s\+$//e
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
-	autocmd BufWritePost ~/.key_directories,~/.key_files !bash ~/.scripts/tools/shortcuts
+	autocmd BufWritePost ~/.bmdirs,~/.bmfiles !bash ~/.scripts/tools/shortcuts
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
 	autocmd VimLeave *.tex !texclear %
@@ -189,9 +186,6 @@ augroup autosourcing
     autocmd!
     autocmd BufWritePost .vimrc source %
 augroup END
-
-" Use urlview to choose and open a url:
-:noremap <leader>u :w<Home>silent <End> !urlview<CR>
 
 " Get out of insert mode free
 inoremap jk <Esc>
@@ -406,6 +400,6 @@ function! RangeChooser()
         exec 'argadd ' . fnameescape(name)
     endfor
     redraw!
-endfunction
-command! -bar RangerChooser call RangeChooser()
-nnoremap <leader>r :<C-U>RangerChooser<CR>
+  endfunction
+  command! -bar RangerChooser call RangeChooser()
+  nnoremap <leader>r :<C-U>RangerChooser<CR>

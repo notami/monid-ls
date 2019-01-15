@@ -86,6 +86,8 @@ exec --no-startup-id mpd
 exec_always --no-startup-id podentr
 # Greenclip
 exec_always --no-startup-id greenclip daemon &
+# Starts random wallpapaer script
+exec_always --no-startup rwp.sh > /dev/null 2>&1 &
 
 # Set Xresources colors:
 set_from_resource $darkblack	color0  #000000
