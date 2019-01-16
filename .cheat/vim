@@ -8,4 +8,10 @@ What this does is:
   vat - selects the entire tag
   p - pastes the previously yanked text over it
 
+# Calls man page for word under the cursor
+  K
 
+# Vim Calculator
+  1. In Insert mode, type Ctrl-r =
+  2. Type your operation
+  3. Hit Enter, and the result will be inserted under your cursor.
