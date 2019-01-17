@@ -7,7 +7,6 @@ p	~/Pictures
 v	~/Videos
 c	~/.config
 s	~/.scripts
-mn /mnt
 mm /mnt/Audio/Music
 md	/mnt/Data/Docs
 mdc	/mnt/Data/Docs/Client
@@ -19,6 +18,7 @@ mvt /mnt/Video/TV
 mvy	/mnt/Video/yoga
 ma /mnt/www/nginx/notes/articles
 mnn /mnt/www/nginx
+nt /mnt
 rm /run/media
 bs /mnt/Data/Docs/Client/DBS/dbsaurer.com/BU-DBS
 lg /mnt/Data/Docs/Client/LegacyIII/legacythree.org/BU-L3

@@ -73,9 +73,6 @@ filetype plugin indent on    " required
 
 let mapleader = (",")
 
-" SHEBANG
-inoremap SH #!/bin/bash
-
 " COLORS
 
 set t_Co=256
@@ -97,6 +94,10 @@ nnoremap <C-H> <C-W><C-H>
 " Replace all is aliased to S.
 	nnoremap S :%s//g<Left><Left>
 
+" Interpret .md files, etc. as .markdown
+	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+
+augroup filetypes
 " Make calcurse notes markdown compatible:
 	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 
@@ -108,6 +109,7 @@ nnoremap <C-H> <C-W><C-H>
 
 " Readmes autowrap text:
 	autocmd BufRead,BufNewFile *.md set tw=79
+augroup END
 
 " Get line, word and character counts with F3:
 	map <F3> :!wc %<CR>
@@ -126,20 +128,24 @@ nnoremap <C-H> <C-W><C-H>
 
 " Enable Goyo by default for mutt writting
 	" Goyo's width will be the line limit in mutt.
+augroup goyo
 	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
 	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo
+augroup END
 
+augroup whitesp
 " Automatically deletes all tralling whitespace on save.
 	autocmd BufWritePre * %s/\s\+$//e
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
-	autocmd BufWritePost ~/.bmdirs,~/.bmfiles !bash ~/.scripts/tools/shortcuts
+	autocmd BufWritePost ~/.key_directories,~/.key_files !bash ~/.scripts/tools/shortcuts
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
 	autocmd VimLeave *.tex !texclear %
 
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+augroup END
 
 " TABS
 
@@ -187,11 +193,16 @@ augroup autosourcing
     autocmd BufWritePost .vimrc source %
 augroup END
 
+" Use urlview to choose and open a url:
+:noremap <leader>u :w<Home>silent <End> !urlview<CR>
+
 " Get out of insert mode free
 inoremap jk <Esc>
 
 " Remaps shortcuts on save
+augroup shcuts
 autocmd BufWritePost ~/.scripts/folders,~/.scripts/configs !bash ~/.scripts/shortcuts.sh
+augroup END
 
 "" PLUGIN OPTIONS
 " Powerline for vim
@@ -268,6 +279,7 @@ nmap ,xc !!boxes -d c-cmt -r<CR>
 vmap ,bc !boxes -d shell
 nmap ,bc !!boxes -d shell
 "
+augroup boxes
 autocmd BufEnter * nmap ,mc !!boxes -d pound-cmt<CR>
 autocmd BufEnter * vmap ,mc !boxes -d pound-cmt<CR>
 autocmd BufEnter * nmap ,xc !!boxes -d pound-cmt -r<CR>
@@ -288,7 +300,7 @@ autocmd BufEnter .vimrc*,.exrc nmap ,mc !!boxes -d vim-cmt<CR>
 autocmd BufEnter .vimrc*,.exrc vmap ,mc !boxes -d vim-cmt<CR>
 autocmd BufEnter .vimrc*,.exrc nmap ,xc !!boxes -d vim-cmt -r<CR>
 autocmd BufEnter .vimrc*,.exrc vmap ,xc !boxes -d vim-cmt -r<CR>
-
+augroup END
 
 "=== BUFFERS ===
 "{{{
@@ -339,7 +351,7 @@ imap <leader>< < ><ESC>i
 nmap <C-Up> [e
 nmap <C-Down> ]e
 
-" Bubble Multiple Lines
+" Bubble multiple lines
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
@@ -400,6 +412,3 @@ function! RangeChooser()
         exec 'argadd ' . fnameescape(name)
     endfor
     redraw!
-  endfunction
-  command! -bar RangerChooser call RangeChooser()
-  nnoremap <leader>r :<C-U>RangerChooser<CR>

@@ -1,5 +1,9 @@
 # PERSONAL MUTTRC
 
+set query_command="goobook query %s"
+macro index,pager a "<pipe-message>goobook add<return>" "add sender to google contacts"
+bind editor <Tab> complete-query
+
 macro index,pager i1 '<sync-mailbox><enter-command>source /home/notami/.config/mutt/accounts/gmail.muttrc<enter><change-folder>!<enter>'
 source /home/notami/.config/mutt/accounts/gmail.muttrc
 macro index,pager i2 '<sync-mailbox><enter-command>source /home/notami/.config/mutt/accounts/gmail.muttrc<enter><change-folder>!<enter>'

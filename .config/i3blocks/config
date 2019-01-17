@@ -65,6 +65,7 @@ signal=10
 
 [iface]
 command=~/.scripts/i3cmds/iface
+label=🌎
 #LABEL=wlan0:
 #IFACE=wlan0
 #ADDRESS_FAMILY=inet6?
