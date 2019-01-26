@@ -34,7 +34,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-commentary'
-Plugin 'suan/vim-instant-markdown'
+" Plugin 'suan/vim-instant-markdown'
 Plugin 'vimwiki/vimwiki'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ftan84/vim-khaled-ipsum'
@@ -49,6 +49,7 @@ Plugin 'dylanaraps/wal.vim'
 Plugin 'deviantfero/wpgtk.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'mboughaba/i3config.vim'
+Plugin 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 " Plugin 'MikeCoder/markdown-preview.vim'
 
 " All of your Plugins must be added before the following line
@@ -212,8 +213,71 @@ let g:Powerline_symbols = 'fancy'
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 " helppage -> :h vimwiki-syntax
 " refresh preview
-let g:instant_markdown_autostart = 0 " disable autostart
-map <leader>md :InstantMarkdownPreview<CR>
+" let g:instant_markdown_autostart = 0 " disable autostart
+map <leader>md :MarkdownPreview<CR>
+map <leader>ms :MarkdownPreviewStop<CR>
+
+" INSTANT MARKDOWN"{{{
+
+" set to 1, the nvim will open the preview window once enter the markdown buffer
+" default: 0
+let g:mkdp_auto_start = 0
+
+" set to 1, the nvim will auto close current preview window when change
+" from markdown buffer to another buffer
+" default: 1
+let g:mkdp_auto_close = 1
+
+" set to 1, the vim will just refresh markdown when save the buffer or
+" leave from insert mode, default 0 is auto refresh markdown as you edit or
+" move the cursor
+" default: 0
+let g:mkdp_refresh_slow = 0
+
+" set to 1, the MarkdownPreview command can be use for all files,
+" by default it just can be use in markdown file
+" default: 0
+let g:mkdp_command_for_global = 0
+
+" set to 1, preview server available to others in your network
+" by default, the server only listens on localhost (127.0.0.1)
+" default: 0
+let g:mkdp_open_to_the_world = 0
+
+" specify browser to open preview page
+" default: ''
+let g:mkdp_browser = ''
+
+" set to 1, echo preview page url in command line when open preview page
+" default is 0
+let g:mkdp_echo_preview_url = 0
+
+" a custom vim function name to open preview page
+" this function will receive url as param
+" default is empty
+let g:mkdp_browserfunc = ''
+
+" options for markdown render
+" mkit: markdown-it options for render
+" katex: katex options for math
+" uml: markdown-it-plantuml options
+" maid: mermaid options
+let g:mkdp_preview_options = {
+    \ 'mkit': {},
+    \ 'katex': {},
+    \ 'uml': {},
+    \ 'maid': {}
+    \ }
+
+" use a custom markdown style must be absolute path
+let g:mkdp_markdown_css = ''
+
+" use a custom highlight style must absolute path
+let g:mkdp_highlight_css = ''
+
+" use a custom port to start server or random for empty
+let g:mkdp_port = ''
+" }}}
 " "}}}
 
 " SEARCH SANITY
@@ -412,3 +476,6 @@ function! RangeChooser()
         exec 'argadd ' . fnameescape(name)
     endfor
     redraw!
+endfunction
+command! -bar RangerChooser call RangeChooser()
+nnoremap <leader>r :<C-U>RangerChooser<CR>endfunction

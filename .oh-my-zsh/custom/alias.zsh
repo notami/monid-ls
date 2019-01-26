@@ -20,12 +20,18 @@ alias pdw="pwd"
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+alias tldr="tldr -t ocean"
 
 ####################
 # #readable output #
 ####################
 alias df='df -h'
 alias merge="xrdb -merge ~/.Xresources"
+
+#########
+# mount #
+#########
+alias mntphone="sudo simple-mtpfs -o allow_other --device 1 /mnt/usb"
 
 #######
 # FUN #

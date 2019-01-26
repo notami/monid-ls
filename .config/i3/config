@@ -58,8 +58,6 @@ client.background       $bg
 # PROTIP: You can also dynamically set dmenu's colors this way:
 # bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
 
-
-
 # PYWAL
 exec --no-startup-id wal -R
 
@@ -87,7 +85,7 @@ exec_always --no-startup-id podentr
 # Greenclip
 exec_always --no-startup-id greenclip daemon &
 # Starts random wallpapaer script
-exec_always --no-startup rwp.sh > /dev/null 2>&1 &
+exec_always --no-startup ~/.scripts/rwp.sh &
 
 # Set Xresources colors:
 set_from_resource $darkblack	color0  #000000

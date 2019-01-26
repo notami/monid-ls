@@ -4,7 +4,7 @@
 
 export PATH="$(du $HOME/.scripts/ | cut -f2 | tr '\n' ':')$PATH"
 export EDITOR="vim"
-export TERMINAL="termite"
+export TERMINAL="st"
 export BROWSER="linkhandler"
 export TRUEBROWSER="firefox"
 export READER="zathura"
