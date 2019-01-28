@@ -141,7 +141,7 @@ SAVEHIST=10000
 
 # other
 setopt beep notify
-bindkey -e
+bindkey -v
 
 # TitleBar setting
 case $TERM in
@@ -236,6 +236,7 @@ source ~/.zplug/repos/b4b4r07/enhancd/init.sh
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "anders-dc/fzf-mpd"
 zplug "plugins/z", from:oh-my-zsh
+zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "b4b4r07/enhancd", use:init.sh
 
 # Add a bunch more of your favorite packages!
