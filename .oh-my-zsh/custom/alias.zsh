@@ -43,7 +43,7 @@ alias fishy="asciiquarium"
 # ### general ### #
 ###################
 alias cls="clear"
-alias la="ls -alG" --color=auto
+alias la="ls -alG" --color
 alias uls="cd /usr/local/share"
 alias l.="ls -A | egrep '^\.'"
 alias xpp="xprop | grep -i 'class'"
@@ -124,7 +124,7 @@ alias catf="cat ~/.scripts/folders"
 ###############
 # ### ssh ### #
 ###############
-alias ssh.f="ssh notami@freenas.local"
+alias ssh.f="ssh notami@notami.xyz"
 alias ssh.d="ssh notami@dbsaurer.com"
 alias ssh.tv="ssh 192.168.1.129"
 alias ssh.nid="ssh 192.168.1.35"

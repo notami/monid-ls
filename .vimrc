@@ -14,19 +14,19 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-		" The following are examples of different formats supported.
-		" Keep Plugin commands between vundle#begin/end.
-		" plugin on GitHub repo
-		" Plugin 'tpope/vim-fugitive'
-		" plugin from http://vim-scripts.org/vim/scripts.html
-		" Plugin 'L9'
-		" Git plugin not hosted on GitHub
-		" Plugin 'git://git.wincent.com/command-t.git'
-		" git repos on your local machine (i.e. when working on your own plugin)
-		" Plugin 'file:///home/gmarik/path/to/plugin'
-		" Install L9 and avoid a Naming conflict if you've already installed a
-		" different version somewhere else.
-		" Plugin 'ascenator/L9', {'name': 'newL9'}
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'scrooloose/nerdtree'
@@ -83,8 +83,8 @@ syntax enable				" Turn on syntax highlighting
 "
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
-	set splitbelow
-	set splitright
+set splitbelow
+set splitright
 
 " Easier split nav
 nnoremap <C-J> <C-W><C-J>
@@ -93,59 +93,59 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Replace all is aliased to S.
-	nnoremap S :%s//g<Left><Left>
+nnoremap S :%s//g<Left><Left>
 
 " Interpret .md files, etc. as .markdown
-	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
 augroup filetypes
-" Make calcurse notes markdown compatible:
-	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
+  " Make calcurse notes markdown compatible:
+  autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 
-" groff files automatically detected
-	autocmd BufRead,BufNewFile *.ms,*.me,*.mom set filetype=groff
+  " groff files automatically detected
+  autocmd BufRead,BufNewFile *.ms,*.me,*.mom set filetype=groff
 
-" .tex files automatically detected
-	autocmd BufRead,BufNewFile *.tex set filetype=tex
+  " .tex files automatically detected
+  autocmd BufRead,BufNewFile *.tex set filetype=tex
 
-" Readmes autowrap text:
-	autocmd BufRead,BufNewFile *.md set tw=79
+  " Readmes autowrap text:
+  autocmd BufRead,BufNewFile *.md set tw=79
 augroup END
 
 " Get line, word and character counts with F3:
-	map <F3> :!wc %<CR>
+map <F3> :!wc %<CR>
 
 " Spell-check set to F6:
-	map <F6> :setlocal spell! spelllang=en_us<CR>
+map <F6> :setlocal spell! spelllang=en_us<CR>
 
 " Use urlview to choose and open a url:
-	:noremap <leader>u :w<Home>silent <End> !urlscan<CR>
-	:noremap ,, :w<Home>silent <End> !urlscan<CR>
+:noremap <leader>u :w<Home>silent <End> !urlscan<CR>
+:noremap ,, :w<Home>silent <End> !urlscan<CR>
 
 " Goyo plugin makes text more readable when writing prose:
-	map <F10> :Goyo<CR>
-	map <leader>f :Goyo \| set linebreak<CR>
-	inoremap <F10> <esc>:Goyo<CR>a
+map <F10> :Goyo<CR>
+map <leader>f :Goyo \| set linebreak<CR>
+inoremap <F10> <esc>:Goyo<CR>a
 
 " Enable Goyo by default for mutt writting
-	" Goyo's width will be the line limit in mutt.
+" Goyo's width will be the line limit in mutt.
 augroup goyo
-	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo
+  autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
+  autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo
 augroup END
 
 augroup whitesp
-" Automatically deletes all tralling whitespace on save.
-	autocmd BufWritePre * %s/\s\+$//e
+  " Automatically deletes all tralling whitespace on save.
+  autocmd BufWritePre * %s/\s\+$//e
 
-" When shortcut files are updated, renew bash and ranger configs with new material:
-	autocmd BufWritePost ~/.key_directories,~/.key_files !bash ~/.scripts/tools/shortcuts
+  " When shortcut files are updated, renew bash and ranger configs with new material:
+  autocmd BufWritePost ~/.key_directories,~/.key_files !bash ~/.scripts/tools/shortcuts
 
-" Runs a script that cleans out tex build files whenever I close out of a .tex file.
-	autocmd VimLeave *.tex !texclear %
+  " Runs a script that cleans out tex build files whenever I close out of a .tex file.
+  autocmd VimLeave *.tex !texclear %
 
-" Disables automatic commenting on newline:
-	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+  " Disables automatic commenting on newline:
+  autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 augroup END
 
 " TABS
@@ -190,8 +190,8 @@ map <leader>xp mz:-1r !xclip -o -sel clip<CR>`z
 
 " Automatically source .vimrc
 augroup autosourcing
-    autocmd!
-    autocmd BufWritePost .vimrc source %
+  autocmd!
+  autocmd BufWritePost .vimrc source %
 augroup END
 
 " Use urlview to choose and open a url:
@@ -202,7 +202,7 @@ inoremap jk <Esc>
 
 " Remaps shortcuts on save
 augroup shcuts
-autocmd BufWritePost ~/.scripts/folders,~/.scripts/configs !bash ~/.scripts/shortcuts.sh
+  autocmd BufWritePost ~/.scripts/folders,~/.scripts/configs !bash ~/.scripts/shortcuts.sh
 augroup END
 
 "" PLUGIN OPTIONS
@@ -263,11 +263,11 @@ let g:mkdp_browserfunc = ''
 " uml: markdown-it-plantuml options
 " maid: mermaid options
 let g:mkdp_preview_options = {
-    \ 'mkit': {},
-    \ 'katex': {},
-    \ 'uml': {},
-    \ 'maid': {}
-    \ }
+      \ 'mkit': {},
+      \ 'katex': {},
+      \ 'uml': {},
+      \ 'maid': {}
+      \ }
 
 " use a custom markdown style must be absolute path
 let g:mkdp_markdown_css = ''
@@ -312,9 +312,9 @@ set wildignore+=*.sw? " Vim swap files
 
 " CTRLP ignore
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(zip|so|swp)$',
-  \ }
+      \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+      \ 'file': '\v\.(zip|so|swp)$',
+      \ }
 "}}}
 
 "LINE WRAPPING
@@ -344,26 +344,26 @@ vmap ,bc !boxes -d shell
 nmap ,bc !!boxes -d shell
 "
 augroup boxes
-autocmd BufEnter * nmap ,mc !!boxes -d pound-cmt<CR>
-autocmd BufEnter * vmap ,mc !boxes -d pound-cmt<CR>
-autocmd BufEnter * nmap ,xc !!boxes -d pound-cmt -r<CR>
-autocmd BufEnter * vmap ,xc !boxes -d pound-cmt -r<CR>
-autocmd BufEnter *.html nmap ,mc !!boxes -d html-cmt<CR>
-autocmd BufEnter *.html vmap ,mc !boxes -d html-cmt<CR>
-autocmd BufEnter *.html nmap ,xc !!boxes -d html-cmt -r<CR>
-autocmd BufEnter *.html vmap ,xc !boxes -d html-cmt -r<CR>
-autocmd BufEnter *.[chly],*.[pc]c nmap ,mc !!boxes -d c-cmt<CR>
-autocmd BufEnter *.[chly],*.[pc]c vmap ,mc !boxes -d c-cmt<CR>
-autocmd BufEnter *.[chly],*.[pc]c nmap ,xc !!boxes -d c-cmt -r<CR>
-autocmd BufEnter *.[chly],*.[pc]c vmap ,xc !boxes -d c-cmt -r<CR>
-autocmd BufEnter *.C,*.cpp,*.java nmap ,mc !!boxes -d java-cmt<CR>
-autocmd BufEnter *.C,*.cpp,*.java vmap ,mc !boxes -d java-cmt<CR>
-autocmd BufEnter *.C,*.cpp,*.java nmap ,xc !!boxes -d java-cmt -r<CR>
-autocmd BufEnter *.C,*.cpp,*.java vmap ,xc !boxes -d java-cmt -r<CR>
-autocmd BufEnter .vimrc*,.exrc nmap ,mc !!boxes -d vim-cmt<CR>
-autocmd BufEnter .vimrc*,.exrc vmap ,mc !boxes -d vim-cmt<CR>
-autocmd BufEnter .vimrc*,.exrc nmap ,xc !!boxes -d vim-cmt -r<CR>
-autocmd BufEnter .vimrc*,.exrc vmap ,xc !boxes -d vim-cmt -r<CR>
+  autocmd BufEnter * nmap ,mc !!boxes -d pound-cmt<CR>
+  autocmd BufEnter * vmap ,mc !boxes -d pound-cmt<CR>
+  autocmd BufEnter * nmap ,xc !!boxes -d pound-cmt -r<CR>
+  autocmd BufEnter * vmap ,xc !boxes -d pound-cmt -r<CR>
+  autocmd BufEnter *.html nmap ,mc !!boxes -d html-cmt<CR>
+  autocmd BufEnter *.html vmap ,mc !boxes -d html-cmt<CR>
+  autocmd BufEnter *.html nmap ,xc !!boxes -d html-cmt -r<CR>
+  autocmd BufEnter *.html vmap ,xc !boxes -d html-cmt -r<CR>
+  autocmd BufEnter *.[chly],*.[pc]c nmap ,mc !!boxes -d c-cmt<CR>
+  autocmd BufEnter *.[chly],*.[pc]c vmap ,mc !boxes -d c-cmt<CR>
+  autocmd BufEnter *.[chly],*.[pc]c nmap ,xc !!boxes -d c-cmt -r<CR>
+  autocmd BufEnter *.[chly],*.[pc]c vmap ,xc !boxes -d c-cmt -r<CR>
+  autocmd BufEnter *.C,*.cpp,*.java nmap ,mc !!boxes -d java-cmt<CR>
+  autocmd BufEnter *.C,*.cpp,*.java vmap ,mc !boxes -d java-cmt<CR>
+  autocmd BufEnter *.C,*.cpp,*.java nmap ,xc !!boxes -d java-cmt -r<CR>
+  autocmd BufEnter *.C,*.cpp,*.java vmap ,xc !boxes -d java-cmt -r<CR>
+  autocmd BufEnter .vimrc*,.exrc nmap ,mc !!boxes -d vim-cmt<CR>
+  autocmd BufEnter .vimrc*,.exrc vmap ,mc !boxes -d vim-cmt<CR>
+  autocmd BufEnter .vimrc*,.exrc nmap ,xc !!boxes -d vim-cmt -r<CR>
+  autocmd BufEnter .vimrc*,.exrc vmap ,xc !boxes -d vim-cmt -r<CR>
 augroup END
 
 "=== BUFFERS ===
@@ -449,33 +449,33 @@ vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
 " files.
 
 function! RangeChooser()
-    let temp = tempname()
-    " The option "--choosefiles" was added in ranger 1.5.1. Use the next line
-    " with ranger 1.4.2 through 1.5.0 instead.
-    "exec 'silent !ranger --choosefile=' . shellescape(temp)
-    if has("gui_running")
-        exec 'silent !xterm -e ranger --choosefiles=' . shellescape(temp)
-    else
-        exec 'silent !ranger --choosefiles=' . shellescape(temp)
-    endif
-    if !filereadable(temp)
-        redraw!
-        " Nothing to read.
-        return
-    endif
-    let names = readfile(temp)
-    if empty(names)
-        redraw!
-        " Nothing to open.
-        return
-    endif
-    " Edit the first item.
-    exec 'edit ' . fnameescape(names[0])
-    " Add any remaning items to the arg list/buffer list.
-    for name in names[1:]
-        exec 'argadd ' . fnameescape(name)
-    endfor
+  let temp = tempname()
+  " The option "--choosefiles" was added in ranger 1.5.1. Use the next line
+  " with ranger 1.4.2 through 1.5.0 instead.
+  "exec 'silent !ranger --choosefile=' . shellescape(temp)
+  if has("gui_running")
+    exec 'silent !xterm -e ranger --choosefiles=' . shellescape(temp)
+  else
+    exec 'silent !ranger --choosefiles=' . shellescape(temp)
+  endif
+  if !filereadable(temp)
     redraw!
+    " Nothing to read.
+    return
+  endif
+  let names = readfile(temp)
+  if empty(names)
+    redraw!
+    " Nothing to open.
+    return
+  endif
+  " Edit the first item.
+  exec 'edit ' . fnameescape(names[0])
+  " Add any remaning items to the arg list/buffer list.
+  for name in names[1:]
+    exec 'argadd ' . fnameescape(name)
+  endfor
+  redraw!
 endfunction
 command! -bar RangerChooser call RangeChooser()
 nnoremap <leader>r :<C-U>RangerChooser<CR>endfunction

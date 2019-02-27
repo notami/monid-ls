@@ -1,3 +1,4 @@
+pactl set-sink-volume 0 -10%
 rsync -avz -e "ssh -i /home/notami/.ssh/nid-rsync" --progress --delete --exclude={/refDesk/,/tv-home/,index.html,indexSam.html,ex.txt,Vim-quickRef.pdf} /mnt/www/nginx/ notami@dbsaurer.com:/var/www/notami.us/html/
 cdda2wav dev=0,0,0 -vall cddb=0 -B -Owav
 growisofs -dvd-compat -Z /dev/sr0=isoimage.iso
@@ -6,7 +7,7 @@ mount -o ro,loop -t iso9660 my_distro.iso /mnt/tmp
 sudo simple-mtpfs -o allow_other --device 1 /mnt/usb
 find . -type f -print0 | xargs -0 chmod 666
 find . -type d -print0 | xargs -0 chmod 777
-sudo mount -o rw,users,umask=000 /dev/sdd1 /mnt/usb
+sudo mount -o rw,users,umask=000 /dev/sdc1 /mnt/usb
 config ls-tree -r master --name-only >> ~/git-tree-master.txt
 w !sudo tee %
  > /dev/null 2>&1 &
