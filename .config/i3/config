@@ -149,49 +149,25 @@ bindsym $mod+grave    exec --no-startup-id dmenuunicode
 #STOP/HIDE EVERYTHING:
 bindsym $mod+Shift+Delete	exec --no-startup-id lmc truemute ; exec $truepause ; exec --no-startup-id pauseallmpv; workspace 0; exec $term -e htop ; exec $term -e ranger
 
-# #---Letter Key Bindings---# #
-bindsym $mod+q			[con_id="__focused__" instance="^(?!math|dropdown).*$"] kill
-bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!math|dropdown).*$"] kill
+set $freeze Distraction-free mode (mod+shift+esc to exit)
+mode "$freeze" { bindsym $mod+Shift+Escape mode "default"
+}
 
-bindsym $mod+w			exec --no-startup-id $BROWSER
-bindsym $mod+Shift+w		exec --no-startup-id $BROWSER
-
-bindsym Mod1+e			exec $term -e neomutt
-bindsym $mod+Shift+e		exec --no-startup-id tutorialvids
-
-bindsym $mod+r 			exec $term -e ranger
-bindsym $mod+Shift+r		exec $term -e sudo ranger /
-
-bindsym $mod+t			split toggle
-bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
-
-bindsym $mod+y			exec $term -e calcurse
-bindsym $mod+Shift+y		exec --no-startup-id "bash ~/.scripts/i3resize left"
-
-bindsym $mod+u			[instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
-bindsym $mod+Shift+u		exec --no-startup-id "bash ~/.scripts/i3resize down"
-
-bindsym $mod+i 			exec $term -e htop
-bindsym $mod+Shift+i		exec --no-startup-id "bash ~/.scripts/i3resize up"
-
-bindsym $mod+o			sticky toggle
-bindsym $mod+Shift+o		exec --no-startup-id "bash ~/.scripts/i3resize right"
-
-bindsym $mod+p			exec --no-startup-id lmc toggle
-bindsym $mod+Shift+p		exec --no-startup-id lmc pause
-
+# #---LETTER KEY BINDINGS---# #
 bindsym $mod+a			[instance="math"] scratchpad show; [instance="math"] move position center
 bindsym $mod+Shift+a		exec $term -e pulsemixer
 
-bindsym Mod1+s			gaps inner current plus 5
-bindsym Mod1+Shift+s		gaps inner current minus 5
+bindsym $mod+b			bar mode toggle
+bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id bottomleft
+
+bindsym $mod+Shift+c			exec --no-startup-id camtoggle
+##bindsym $mod+Shift+c
 
 bindsym $mod+d			exec --no-startup-id dmenu_run
 bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
-set $freeze Distraction-free mode (mod+shift+esc to exit)
-mode "$freeze" { bindsym $mod+Shift+Escape mode "default"
-}
+bindsym Mod1+e			exec $term -e neomutt
+bindsym $mod+Shift+e		exec --no-startup-id tutorialvids
 
 bindsym $mod+f			fullscreen toggle
 bindsym $mod+Shift+f		mode "$freeze"
@@ -202,6 +178,9 @@ bindsym $mod+Shift+g		exec --no-startup-id gimp; workspace $ws5
 bindsym $mod+h			focus left
 bindsym $mod+Shift+h		move left 30
 
+bindsym $mod+i 			exec $term -e htop
+bindsym $mod+Shift+i		exec --no-startup-id "bash ~/.scripts/i3resize up"
+
 bindsym $mod+j			focus down
 bindsym $mod+Shift+j		move down 30
 
@@ -211,28 +190,50 @@ bindsym $mod+Shift+k		move up 30
 bindsym $mod+l			focus right
 bindsym $mod+Shift+l		move right 30
 
-bindsym Mod1+z			gaps outer current plus 5
-bindsym Mod1+Shift+z		gaps outer current minus 5
-
-bindsym $mod+x			exec --no-startup-id lockscreen
-bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
-
-bindsym $mod+Shift+c			exec --no-startup-id camtoggle
-##bindsym $mod+Shift+c
-
-bindsym $mod+v			exec $term -e ncmpcpp -s visualizer
-bindsym $mod+Shift+v		exec --no-startup-id projectM-pulseaudio
-
-bindsym $mod+b			bar mode toggle
-bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id bottomleft
+bindsym $mod+m 			exec --no-startup-id $term -e ncmpcpp
+bindsym $mod+Shift+m		exec --no-startup-id lmc mute
 
 bindsym $mod+n			exec $term -e newspod
 ##bindsym $mod+Shift+n
 
-bindsym $mod+m 			exec --no-startup-id $term -e ncmpcpp
-bindsym $mod+Shift+m		exec --no-startup-id lmc mute
+bindsym $mod+o			sticky toggle
+bindsym $mod+Shift+o		exec --no-startup-id "bash ~/.scripts/i3resize right"
 
-# start rofi clipboard
+bindsym $mod+p			exec --no-startup-id lmc toggle
+bindsym $mod+Shift+p		exec --no-startup-id lmc pause
+
+bindsym $mod+q			[con_id="__focused__" instance="^(?!math|dropdown).*$"] kill
+bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!math|dropdown).*$"] kill
+
+bindsym $mod+r 			exec $term -e ranger
+bindsym $mod+Shift+r		exec $term -e sudo ranger /
+
+bindsym Mod1+s			gaps inner current plus 5
+bindsym Mod1+Shift+s		gaps inner current minus 5
+
+bindsym $mod+t			split toggle
+bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
+bindsym $mod+Ctrl+t   exec --no-startup-id "bash ~/.scripts/tinyurl"
+
+bindsym $mod+u			[instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+bindsym $mod+Shift+u		exec --no-startup-id "bash ~/.scripts/i3resize down"
+
+bindsym $mod+v			exec $term -e ncmpcpp -s visualizer
+bindsym $mod+Shift+v		exec --no-startup-id projectM-pulseaudio
+
+bindsym $mod+w			exec --no-startup-id $BROWSER
+bindsym $mod+Shift+w		exec --no-startup-id $BROWSER
+
+bindsym $mod+x			exec --no-startup-id lockscreen
+bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
+
+bindsym $mod+y			exec $term -e calcurse
+bindsym $mod+Shift+y		exec --no-startup-id "bash ~/.scripts/i3resize left"
+
+bindsym Mod1+z			gaps outer current plus 5
+bindsym Mod1+Shift+z		gaps outer current minus 5
+
+# START ROFI CLIPBOARD
 bindsym Shift+Control+space	exec --no-startup-id rofi -show run
 bindsym $mod+c exec  --no-startup-id ~/.scripts/rofi-bangs.sh
 
