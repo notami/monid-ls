@@ -209,6 +209,7 @@ alias cdck="cdparanoia -vsQ"
 alias cdrip="cdparanoia -BZ"
 alias cdrip+="cdparanoia -B"
 alias mp3con="for t in track{01..21}*.wav; do lame $t; done"
+alias flac2mp3="for file in *.flac; do ffmpeg -i $file -q:a 0 ${file:r}.mp3; done"
 
 #####################
 # You Tube Download #
