@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# get last mouse selection
+CLIPB="$(xclip -o)"
+
+echo "$CLIPB" | neomutt 3302344106@txt.att.net
+
+#Display notification - Time out after 5 seconds
+notify-send -t 5000 " 📱Msg sent to phone" "$CLIPB"
