@@ -126,8 +126,8 @@ alias catf="cat ~/.scripts/folders"
 ###############
 alias ssh.f="ssh notami@notami.xyz"
 alias ssh.d="ssh notami@dbsaurer.com"
-alias ssh.tv="ssh 192.168.1.129"
-alias ssh.nid="ssh 192.168.1.35"
+alias ssh.tv="ssh 192.168.1.202"
+alias ssh.nid="ssh 192.168.1.37"
 alias ssh.kt="ssh nid-kt.local"
 
 ####################

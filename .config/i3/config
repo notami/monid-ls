@@ -201,6 +201,7 @@ bindsym $mod+Shift+o		exec --no-startup-id "bash ~/.scripts/i3resize right"
 
 bindsym $mod+p			exec --no-startup-id lmc toggle
 bindsym $mod+Shift+p		exec --no-startup-id lmc pause
+bindsym $mod+Ctrl+p   exec --no-startup-id "bash ~/.scripts/2phone"
 
 bindsym $mod+q			[con_id="__focused__" instance="^(?!math|dropdown).*$"] kill
 bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!math|dropdown).*$"] kill
