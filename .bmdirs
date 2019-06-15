@@ -7,7 +7,6 @@ p	~/Pictures
 v	~/Videos
 c	~/.config
 s	~/.scripts
-ad ~/Data/dwm
 mz ~/.mozilla/firefox/larbs.default
 mm /mnt/Audio/Music
 md	/mnt/Data/Docs

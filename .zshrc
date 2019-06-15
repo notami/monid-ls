@@ -49,10 +49,14 @@ autoload -U zmv
 # export UPDATE_ZSH_DAYS=13
 #
 # ignore duplicates in zsh_history
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
+setopt HIST_BEEP
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -191,7 +195,7 @@ compctl -K _cmpl_cheat cheat
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
-(\cat ~/.cache/wal/sequences &)
+#(\cat ~/.cache/wal/sequences &)
 
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh

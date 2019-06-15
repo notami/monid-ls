@@ -3,6 +3,7 @@
 *cursor: #a8a19f
 *background:       #1b1918
 !!*background: rgba(0, 0, 0, .7)
+*alpha: 180
 
 !! black
 *color0: #1b1918

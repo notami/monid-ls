@@ -32,5 +32,7 @@ then
   exec tmux attach -d -t daily
 fi
 
+compton &
+
 # Auto start tbsm after login on first two VTs
 # [[ $XDG_VTNR -le 2 ]] && tbsm

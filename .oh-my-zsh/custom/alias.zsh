@@ -79,8 +79,8 @@ alias music="ncmpcpp"
 alias clock="ncmpcpp -s clock"
 alias viz="ncmpcpp -s visualizer"
 alias nb="newsboat"
-alias pp1="pipes.sh"
-alias pp3="pipes.sh -t 3 -p 3 -f 30"
+alias pp1="pipes"
+alias pp3="pipes -t 3 -p 3 -f 30"
 alias wall='wal -i ~/.config/variety/Favorites'
 alias srr='sr -elvi | less'
 alias hsw='history | grep --color=auto wal -i'
