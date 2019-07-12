@@ -1,28 +1,28 @@
 # You can add comments to these files with #
 a ~/Data
+c	~/.config
 d	~/Documents
-w	~/Downloads
 m	~/Music
 p	~/Pictures
-v	~/Videos
-c	~/.config
 s	~/.scripts
-mz ~/.mozilla/firefox/larbs.default
-mm /mnt/Audio/Music
+v	~/Videos
+w	~/Downloads
+bs  /mnt/Data/Docs/Client/DBS/dbsaurer.com/BU-DBS
+lg  /mnt/Data/Docs/Client/LegacyIII/legacythree.org/BU-L3
+ma  /mnt/www/nginx/notes/articles
 md	/mnt/Data/Docs
+mh  /mnt/Data/Docs/Client/MiraclesHappen/miraclesupholstery.com/BU-MH
+mi  /mnt/Images
+mm  /mnt/Audio/Music
+mz  ~/.mozilla/firefox/larbs.default
+nt  /mnt
+ol  /mnt/Data/Docs/Client/One Love No Boundaries/olnb.org/BU-OLNB
+rm  /run/media
+us  /usr/share
 mdc	/mnt/Data/Docs/Client
 mdn	/mnt/Data/Docs/NID
 mdt	/mnt/Data/Docs/tmp
-mi /mnt/Images
+mnn /mnt/www/nginx
 mvm	/mnt/Video/Movies
 mvt /mnt/Video/TV
 mvy	/mnt/Video/yoga
-ma /mnt/www/nginx/notes/articles
-mnn /mnt/www/nginx
-nt /mnt
-rm /run/media
-bs /mnt/Data/Docs/Client/DBS/dbsaurer.com/BU-DBS
-lg /mnt/Data/Docs/Client/LegacyIII/legacythree.org/BU-L3
-mh /mnt/Data/Docs/Client/MiraclesHappen/miraclesupholstery.com/BU-MH
-ol /mnt/Data/Docs/Client/One Love No Boundaries/olnb.org/BU-OLNB
-us /usr/share

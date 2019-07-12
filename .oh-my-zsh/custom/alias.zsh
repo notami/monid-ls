@@ -73,7 +73,7 @@ alias vi3="vim /home/notami/.config/i3/config"
 ####################
 # Calling All Apps #
 ####################
-alias cat="bat"
+## alias cat="bat"
 alias mail="neomutt"
 alias music="ncmpcpp"
 alias clock="ncmpcpp -s clock"
@@ -195,6 +195,7 @@ alias orphans="pacman -Qdt" # List orphan programs
 alias sdn="sudo shutdown now"
 alias psref="gpg-connect-agent RELOADAGENT /bye" # Refresh gpg
 alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias clear_history='echo "" > ~/.zsh_history & exec $SHELL -l'
 
 #####################
 # # show log output #
