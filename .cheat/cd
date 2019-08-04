@@ -1,7 +1,7 @@
 Rip CD to wav
 cdda2wav dev=0,0,0 -vall cddb=0 -B -Owav
 
-Burn auio CD
+Burn audio CD
 cdrecord -v dev=0,0,0 -speed 8 driveropts=burnfree fs=32m -eject
 
 Burn bootable DVD

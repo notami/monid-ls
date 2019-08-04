@@ -1,3 +1,7 @@
+for f in *mp3; do;    eyeD3 -t ${f:0:3} "$f";    done
+for f in *mp3; do;    eyeD3 -n ${f:0:2} "$f";    done
+eyeD3 -a "" -A "" *.mp3
+eyeD3 --add-image "front.jpg:FRONT_COVER" *.mp3
 pactl set-sink-volume 0 -10%
 rsync -avz -e "ssh -i /home/notami/.ssh/nid-rsync" --progress --delete --exclude={/refDesk/,/tv-home/,index.html,indexSam.html,ex.txt,Vim-quickRef.pdf} /mnt/www/nginx/ notami@dbsaurer.com:/var/www/notami.us/html/
 cdda2wav dev=0,0,0 -vall cddb=0 -B -Owav
@@ -19,4 +23,11 @@ echo -n "$(greenclip print | fzf -e -i)" | xclip -selection clipboard
 {-_-}
 (_!_)
 (*)(*)
+sudo lsblk --output NAME,FSTYPE,LABEL,UUID,MODE
+rsync -avu /mnt/Data/Docs/tmp/favs ~/Pictures/favs
+sudo fc-cache -fv
+pacmd list-sinks
+pactl set-sink-volume mpv -- -10%
+pactl set-sink-volume 1 -10%
+pacmd list-sink-inputs
 

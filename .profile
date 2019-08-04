@@ -11,6 +11,9 @@ export READER="zathura"
 export BIB="$HOME/Documents/LaTeX/uni.bib"
 export REFER="$HOME/.referbib"
 
+export rclone_jobber="/home/notami/Data/rclone_jobber"
+export usb="/mnt/Data/Archive/monid"
+
 [ ! -f ~/.shortcuts ] && shortcuts 2>/dev/null
 
 [ -f ~/.bashrc ] && source ~/.bashrc
@@ -32,7 +35,7 @@ then
   exec tmux attach -d -t daily
 fi
 
-compton &
+# compton &
 
 # Auto start tbsm after login on first two VTs
 # [[ $XDG_VTNR -le 2 ]] && tbsm

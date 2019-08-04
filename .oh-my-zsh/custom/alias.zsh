@@ -126,7 +126,8 @@ alias catf="cat ~/.scripts/folders"
 ###############
 alias ssh.f="ssh notami@notami.xyz"
 alias ssh.d="ssh notami@dbsaurer.com"
-alias ssh.tv="ssh 192.168.1.202"
+alias ssh.tv="ssh 192.168.1.22"
+alias ssh.mo="ssh 192.168.1.103"
 alias ssh.nid="ssh 192.168.1.37"
 alias ssh.kt="ssh nid-kt.local"
 
@@ -164,7 +165,7 @@ alias rsmhd="rsync -auvzhe ssh --progress notami@dbsaurer.com:/var/www/miraclesu
 alias rsold="rsync -auvzhe ssh --progress notami@dbsaurer.com:/var/www/olnb.org/html/ /mnt/Data/Docs/Client/One\ Love\ No\ Boundaries/olnb.org/BU-OLNB/LocalMirror-OLNB/"
 # alias rsolf="rsync -ruvzhe ssh --progress "/home/notami/Documents/MyDocuments/Client/One Love No Boundaries/" "/mnt/Data/Docs/Client/One Love No Boundaries/""
 alias rsnot="rsync -avz -e 'ssh -i /home/notami/.ssh/nid-rsync' --progress –delete --exclude={/refDesk/,/tv-home/,index.html,indexSam.html,ex.txt,Vim-quickRef.pdf} /mnt/www/nginx/ notami@dbsaurer.com:/var/www/notami.us/html/"
-alias rshome="rsync -aP --exclude-from=/var/tmp/ignorelist -e ssh /home/$USER/ notami@freenas.local:/mnt/vol2/Data/Archive/monid"
+alias rshome="rsync -aP --exclude-from=/var/tmp/ignorelist -e ssh /home/$USER/ notami@notami.xyz:/mnt/vol2/Data/Archive/monid"
 alias rspix="rsync -av -progress /mnt/Data/Docs/tmp/favs/* /home/notami/Pictures/favs/ && diff -rq /mnt/Data/Docs/tmp/favs ~/Pictures/favs"
 
 ####################################
