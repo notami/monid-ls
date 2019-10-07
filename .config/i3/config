@@ -17,7 +17,9 @@
 # export BROWSER="firefox"
 # export TERMINAL="st"
 
-# Change container layout
+#############################
+# # Change container layout #
+#############################
 bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
@@ -31,7 +33,9 @@ set $reboot sudo -A reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 set $hibernate sudo -A systemctl suspend
 
-# MAIN FONT
+###############
+# # MAIN FONT #
+###############
 font pango:NotoSansRegular-Mono 14
 
 #########
@@ -61,7 +65,9 @@ client.background       $bg
 # PYWAL
 exec --no-startup-id wal -R
 
-# #---Starting External Scripts---# #
+#############################
+# Starting External Scripts #
+#############################
 # Setting the background and colorscheme:
 # exec --no-startup-id wal -i ~/.config/wall.png >/dev/null
 # Starts dunst for notifications:
@@ -87,7 +93,9 @@ exec_always --no-startup-id greenclip daemon &
 # Starts random wallpapaer script
 exec_always --no-startup ~/.scripts/rwp.sh &
 
-# Set Xresources colors:
+##########################
+# Set Xresources colors: #
+##########################
 set_from_resource $darkblack	color0  #000000
 set_from_resource $black	color8  #000000
 set_from_resource $darkred	color1  #000000
@@ -130,7 +138,9 @@ bar {
 	modifier None
 }
 
-# #---Basic Bindings---# #
+##################
+# Basic Bindings #
+##################
 bindsym $mod+Return 		exec $term
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
 
@@ -153,12 +163,15 @@ set $freeze Distraction-free mode (mod+shift+esc to exit)
 mode "$freeze" { bindsym $mod+Shift+Escape mode "default"
 }
 
-# #---LETTER KEY BINDINGS---# #
+#######################
+# LETTER KEY BINDINGS #
+#######################
 bindsym $mod+a			[instance="math"] scratchpad show; [instance="math"] move position center
 bindsym $mod+Shift+a		exec $term -e pulsemixer
 
 bindsym $mod+b			bar mode toggle
 bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id bottomleft
+bindsym Control+Shift+b	exec --no-startup-id buku_run
 
 bindsym $mod+Shift+c			exec --no-startup-id camtoggle
 ##bindsym $mod+Shift+c
@@ -168,6 +181,7 @@ bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
 bindsym Mod1+e			exec $term -e neomutt
 bindsym $mod+Shift+e		exec --no-startup-id tutorialvids
+bindsym Mod1+Control+e	exec --no-startup-id et
 
 bindsym $mod+f			fullscreen toggle
 bindsym $mod+Shift+f		mode "$freeze"
@@ -186,6 +200,7 @@ bindsym $mod+Shift+j		move down 30
 
 bindsym $mod+k			focus up
 bindsym $mod+Shift+k		move up 30
+bindsym control+mod1+k exec --no-startup-id Kodi
 
 bindsym $mod+l			focus right
 bindsym $mod+Shift+l		move right 30
@@ -205,6 +220,7 @@ bindsym $mod+Ctrl+p   exec --no-startup-id "bash ~/.scripts/2phone"
 
 bindsym $mod+q			[con_id="__focused__" instance="^(?!math|dropdown).*$"] kill
 bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!math|dropdown).*$"] kill
+bindsym control+mod1+q exec --no-startup-id qutebrowser
 
 bindsym $mod+r 			exec $term -e ranger
 bindsym $mod+Shift+r		exec $term -e sudo ranger /
@@ -227,6 +243,7 @@ bindsym $mod+Shift+w		exec --no-startup-id $BROWSER
 
 bindsym $mod+x			exec --no-startup-id lockscreen
 bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
+bindsym control+mod1+x exec --no-startup-id keepassxc move position center
 
 bindsym $mod+y			exec $term -e calcurse
 bindsym $mod+Shift+y		exec --no-startup-id "bash ~/.scripts/i3cmds/i3resize left"
@@ -234,17 +251,15 @@ bindsym $mod+Shift+y		exec --no-startup-id "bash ~/.scripts/i3cmds/i3resize left
 bindsym Mod1+z			gaps outer current plus 5
 bindsym Mod1+Shift+z		gaps outer current minus 5
 
-# START ROFI CLIPBOARD
+########################
+# START ROFI CLIPBOARD #
+########################
 bindsym Shift+Control+space	exec --no-startup-id rofi -show run
 bindsym $mod+c exec  --no-startup-id ~/.scripts/rofi-bangs.sh
 
-bindsym control+mod1+q exec --no-startup-id qutebrowser
-bindsym control+mod1+k exec --no-startup-id Kodi
-
-bindsym Mod1+Control+e	exec --no-startup-id et
-bindsym control+mod1+x exec --no-startup-id keepassxc move position center
-
-# #---Scratch Bindings---# #
+####################
+# Scratch Bindings #
+####################
 # move the currently focused window to the scratchpad
 bindsym Mod1+Shift+minus move scratchpad
 
@@ -252,7 +267,9 @@ bindsym Mod1+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym Mod1+minus scratchpad show
 
-# #---Workspace Bindings---# #
+######################
+# Workspace Bindings #
+######################
 bindsym $mod+Home		workspace $ws1
 bindsym $mod+Shift+Home		move container to workspace $ws1
 bindsym $mod+End		workspace $ws10
@@ -283,7 +300,9 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# switch to workspace
+#######################
+# switch to workspace #
+#######################
 bindsym $mod+1		workspace $ws1
 bindsym $mod+2		workspace $ws2
 bindsym $mod+3		workspace $ws3
@@ -295,7 +314,9 @@ bindsym $mod+8		workspace $ws8
 bindsym $mod+9		workspace $ws9
 bindsym $mod+0		workspace $ws10
 
-# move focused container to workspace
+#######################################
+# move focused container to workspace #
+#######################################
 bindsym $mod+Shift+1	move container to workspace $ws1
 bindsym $mod+Shift+2	move container to workspace $ws2
 bindsym $mod+Shift+3	move container to workspace $ws3
@@ -337,13 +358,17 @@ for_window [instance="math"] move scratchpad
 for_window [instance="math"] border pixel 2
 exec --no-startup-id $term -n math -f mono:pixelsize=24 -e dropdowncalc
 
-# Bindings to make the webcam float and stick.
+################################################
+# Bindings to make the webcam float and stick. #
+################################################
 for_window [title="mpvfloat"] floating enable
 for_window [title="mpvfloat"] sticky enable
 for_window [title="mpvfloat"] border pixel 0
 no_focus [title="mpvfloat"]
 
-# #---Function Buttons---# #
+####################
+# Function Buttons #
+####################
 bindsym $mod+F1		exec --no-startup-id zathura ~/.config/i3/i3_guide.pdf
 bindsym $mod+F2		restart
 bindsym $mod+F3		exec --no-startup-id displayselect
@@ -358,7 +383,9 @@ bindsym $mod+F11	exec --no-startup-id searx
 # bindsym $mod+F11	exec --no-startup-id ducksearch
 bindsym $mod+F12	exec $term -e sudo -A wifi-menu
 
-# #---Arrow Keys---# #
+##########################
+# # #---Arrow Keys---# # #
+##########################
 bindsym $mod+Left		focus left
 bindsym $mod+Down		focus down
 bindsym $mod+Up			focus up
@@ -368,7 +395,9 @@ bindsym $mod+Shift+Down		move down
 bindsym $mod+Shift+Up		move up
 bindsym $mod+Shift+Right 	move right
 
-# #---Media Keys---# #
+##########################
+# # #---Media Keys---# # #
+##########################
 
 # Volume keys
 bindsym $mod+plus		exec --no-startup-id lmc up 5
@@ -380,13 +409,17 @@ bindsym $mod+Shift+less		exec --no-startup-id lmc replay
 bindsym $mod+greater		exec --no-startup-id lmc next
 bindsym $mod+Shift+greater	exec --no-startup-id lmc next
 
-# For advancing forward/backward in an mpd song
+###################################################
+# # For advancing forward/backward in an mpd song #
+###################################################
 bindsym $mod+bracketleft 	exec --no-startup-id lmc back 10
 bindsym $mod+Shift+bracketleft 	exec --no-startup-id lmc back 120
 bindsym $mod+bracketright 	exec --no-startup-id lmc forward 10
 bindsym $mod+Shift+bracketright exec --no-startup-id lmc forward 120
 
-# For screenshots and recording
+###################################
+# # For screenshots and recording #
+###################################
 bindsym Print 			exec --no-startup-id scrot
 bindsym Shift+Print 		exec --no-startup-id scrot -u
 bindsym $mod+Print		exec --no-startup-id dmenurecord
@@ -394,7 +427,9 @@ bindsym $mod+Scroll_Lock	exec --no-startup-id "killall screenkey || screenkey"
 bindsym $mod+Delete		exec $stoprec
 bindsym XF86Launch1		exec $stoprec & xset dpms force off
 
-# #---Extra XF86 Keys---# #
+###############################
+# # #---Extra XF86 Keys---# # #
+###############################
 # These are the extra media keys that some keyboards have.
 bindsym XF86AudioMute		exec --no-startup-id lmc mute
 bindsym XF86AudioLowerVolume	exec --no-startup-id lmc down 5

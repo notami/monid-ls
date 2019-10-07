@@ -33,6 +33,13 @@ alias merge="xrdb -merge ~/.Xresources"
 #########
 alias mntphone="sudo simple-mtpfs -o allow_other --device 1 /mnt/usb"
 
+##########
+# search #
+##########
+
+alias so='googler -j -w stackoverflow.com | xsel'
+
+
 #######
 # FUN #
 #######
@@ -259,4 +266,3 @@ alias -g LL="2>&1 | less"
 alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
-

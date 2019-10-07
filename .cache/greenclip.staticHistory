@@ -6,6 +6,7 @@ pactl set-sink-volume 0 -10%
 rsync -avz -e "ssh -i /home/notami/.ssh/nid-rsync" --progress --delete --exclude={/refDesk/,/tv-home/,index.html,indexSam.html,ex.txt,Vim-quickRef.pdf} /mnt/www/nginx/ notami@dbsaurer.com:/var/www/notami.us/html/
 cdda2wav dev=0,0,0 -vall cddb=0 -B -Owav
 growisofs -dvd-compat -Z /dev/sr0=isoimage.iso
+wodim -eject -tao  speed=2 dev=/dev/sr0 -v -data *.iso
 cdrecord -v dev=0,0,0 -speed 8 driveropts=burnfree fs=32m -eject
 mount -o ro,loop -t iso9660 my_distro.iso /mnt/tmp
 sudo simple-mtpfs -o allow_other --device 1 /mnt/usb
