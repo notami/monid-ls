@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Shell rc file (i.e. bash vs. zsh, etc.)
-shellrc="$HOME/.bashrc"
+shellrc="$HOME/.zshrc"
 
 # Bookmark file locations
 bmdirs="$HOME/.bmdirs"
