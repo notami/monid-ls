@@ -5,9 +5,12 @@
 export ZSH=/home/notami/.oh-my-zsh
 # export VISUAL=vim
 # export EDITOR="$VISUAL"
-VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
+VISUAL=nvim; export VISUAL EDITOR=nvim; export EDITOR
 # source ~/.bashrc
-PATH=$PATH:/home/notami/.scripts
+PATH=$PATH:/home/notami/.local/bin/
+
+# tmuxp
+# eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -35,7 +38,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # load zmv
-autoload -U zmv
+#autoload -U zmv
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -89,44 +92,9 @@ setopt HIST_BEEP
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(z fzf)
+plugins=(z)
 
 source $ZSH/oh-my-zsh.sh
-
-############
-# FZF OPTS #
-############
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
-
-##################
-# ZSH keybinding #
-##################
-
-fzf_history() { zle -I; eval $(history | fzf +s | sed 's/ *[0-9]* *//') ; }; zle -N fzf_history; bindkey '^F' fzf_history
-
-fzf_killps() { zle -I; ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9} ; }; zle -N fzf_killps; bindkey '^Q' fzf_killps
-
-fzf_cd() { zle -I; DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR" ; }; zle -N fzf_cd; bindkey '^E' fzf_cd
-
-
-########################
-# # Greenclip - fzf #  #
-########################
-
-# start fuzzy finder frontend to greenclip
-fzf-clipboard() { echo -n "$(greenclip print | fzf -e -i)" | xclip -selection clipboard ;}
-
-# greenclip configuration settings
-cfg-greenclip() { killall greenclip ; $EDITOR ~/.config/greenclip.cfg && nohup greenclip daemon > /dev/null 2>&1 & }
-
-# greenclip reload
-rld-greenclip() { killall greenclip ; nohup greenclip daemon > /dev/null 2>&1 & }
-
-# greenclip clear history
-derez-greenclip() { killall greenclip ; rm ~/.cache/greenclip.history && nohup greenclip daemon > /dev/null 2>&1 & }
 
 ########################
 # # User configuration #
@@ -252,7 +220,7 @@ bindkey "^[[Z" magic-space            # shift-tab to bypass completion
 bindkey -M isearch " " magic-space    # normal space during searches
 
 neofetch
-source /home/notami/.shortcuts
+ source /home/notami/.config/shortcutrc
 
 ########################
 # SHELL FOLLOWS RANGER #
@@ -274,6 +242,41 @@ function ranger {
   command rm -f -- "$tempfile" 2>/dev/null
 }
 
+############
+# FZF OPTS #
+############
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_OPTS="--extended"
+#export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
+
+##################
+# ZSH keybinding #
+##################
+
+fzf_history() { zle -I; eval $(history | fzf +s | sed 's/ *[0-9]* *//') ; }; zle -N fzf_history; bindkey '^F' fzf_history
+
+fzf_killps() { zle -I; ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9} ; }; zle -N fzf_killps; bindkey '^Q' fzf_killps
+
+fzf_cd() { zle -I; DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR" ; }; zle -N fzf_cd; bindkey '^E' fzf_cd
+
+
+########################
+# # Greenclip - fzf #  #
+########################
+
+# start fuzzy finder frontend to greenclip
+fzf-clipboard() { echo -n "$(greenclip print | fzf -e -i)" | xclip -selection clipboard ;}
+
+# greenclip configuration settings
+cfg-greenclip() { killall greenclip ; $EDITOR ~/.config/greenclip.cfg && nohup greenclip daemon > /dev/null 2>&1 & }
+
+# greenclip reload
+rld-greenclip() { killall greenclip ; nohup greenclip daemon > /dev/null 2>&1 & }
+
+# greenclip clear history
+derez-greenclip() { killall greenclip ; rm ~/.cache/greenclip.history && nohup greenclip daemon > /dev/null 2>&1 & }
 
 #########
 # ZPLUG #
@@ -291,7 +294,7 @@ source ~/.zplug/repos/b4b4r07/enhancd/init.sh
 
 # Make sure to use double quotes to prevent shell expansion
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "anders-dc/fzf-mpd"
+# zplug "anders-dc/fzf-mpd"
 zplug "plugins/z", from:oh-my-zsh
 zplug "b4b4r07/enhancd", use:init.sh
 

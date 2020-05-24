@@ -64,6 +64,15 @@ alias cc="config commit"
 alias ccm="config commit -m"
 alias cp="config push"
 
+################################
+# ###      git alias       ### #
+################################
+alias gis="git status"
+alias gia="git add"
+alias gic="git commit"
+alias gicm="git commit -m"
+alias gip="git push"
+
 #####################
 # ### dot files ### #
 #####################
@@ -88,12 +97,12 @@ alias viz="ncmpcpp -s visualizer"
 alias nb="newsboat"
 alias pp1="pipes"
 alias pp3="pipes -t 3 -p 3 -f 30"
-alias wall='wal -i ~/.config/variety/Favorites'
+alias wall='wal -i ~/Pictures/favs'
 alias srr='sr -elvi | less'
 alias hsw='history | grep --color=auto wal -i'
 alias du="ncdu --color dark -x --exclude .git --exclude node_modules"
 alias dus="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
-alias mlv='/opt/mullvad-vpn/mullvad-vpn &; disown'
+alias mlv='/usr/bin/mullvad-vpn &; disown'
 alias wfz='wpg -s $(wpg -l | fzf)'
 alias rcp="rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}"
 alias fcp="fzf-greenclip"
@@ -105,8 +114,9 @@ alias tw3="torsocks w3m"
 ################
 alias p="sudo pacman"
 alias SS="sudo systemctl"
-alias v="vim"
-alias sv="sudo vim"
+alias vi="nvim"
+alias vim="nvim"
+alias sv="sudo nvim"
 alias r="ranger"
 alias sr="sudo ranger"
 alias ka="killall"
@@ -136,7 +146,7 @@ alias ssh.d="ssh notami@dbsaurer.com"
 alias ssh.tv="ssh 192.168.1.22"
 alias ssh.mo="ssh 192.168.1.103"
 alias ssh.nid="ssh 192.168.1.37"
-alias ssh.kt="ssh nid-kt.local"
+alias ssh.kt="ssh 192.168.1.47"
 
 ####################
 # ### commands ### #
@@ -174,6 +184,8 @@ alias rsold="rsync -auvzhe ssh --progress notami@dbsaurer.com:/var/www/olnb.org/
 alias rsnot="rsync -avz -e 'ssh -i /home/notami/.ssh/nid-rsync' --progress –delete --exclude={/refDesk/,/tv-home/,index.html,indexSam.html,ex.txt,Vim-quickRef.pdf} /mnt/www/nginx/ notami@dbsaurer.com:/var/www/notami.us/html/"
 alias rshome="rsync -aP --exclude-from=/var/tmp/ignorelist -e ssh /home/$USER/ notami@notami.xyz:/mnt/vol2/Data/Archive/monid"
 alias rspix="rsync -av -progress /mnt/Data/Docs/tmp/favs/* /home/notami/Pictures/favs/ && diff -rq /mnt/Data/Docs/tmp/favs ~/Pictures/favs"
+alias savehome="~/.local/src/rclone_jobber/monid_backup.sh"
+alias rsns="rsync -auvzhe ssh --progress notami@dbsaurer.com:/var/www/ninasaurer.com/html/ /mnt/Data/Docs/Client/Nina/LocalMirror-NS/"
 
 ####################################
 # Aliases for software managment #
@@ -191,12 +203,13 @@ alias pksn="packer -S --noconfirm --noedit"
 alias pksyu="packer -Syu --noconfirm --noedit"
 alias tvstart="systemctl start teamviewerd.service"
 alias tvstop="systemctl stop teamviewerd.service"
-alias ckre="sudo python2.7 ~/.scripts/checkrestart.py"
+alias ckre="sudo python2.7 ~/.local/bin/checkrestart.py"
+alias reflectmirror="sudo reflector --latest 50 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 
 #######################
 # System Maintainence #
 #######################
-alias mw="~/.config/mutt/mutt-wizard.sh"
+# alias mw="~/.config/mutt/mutt-wizard.sh"
 alias muttwizard="~/.config/mutt/mutt-wizard.sh"
 alias progs="(pacman -Qet && pacman -Qm) | sort -u" # List programs I've installed
 alias orphans="pacman -Qdt" # List orphan programs
@@ -204,6 +217,8 @@ alias sdn="sudo shutdown now"
 alias psref="gpg-connect-agent RELOADAGENT /bye" # Refresh gpg
 alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias clear_history='echo "" > ~/.zsh_history & exec $SHELL -l'
+alias refmir20="sudo reflector --verbose --latest 20 --sort rate --save /etc/pacman.d/mirrorlist"
+alias lsblk="lsblk -o NAME,MAJ:MIN,RM,SIZE,TYPE,LABEL,FSTYPE,UUID,MOUNTPOINT"
 
 #####################
 # # show log output #
@@ -259,7 +274,7 @@ alias -g L='| less'
 alias -g M='| most'
 alias -g C='| wc -l'
 alias -g H='| head'
-alias -g W='wal -i ~/.config/variety/Favorites'
+alias -g W='wal -i ~/Pictures/favs'
 alias -g T='| tail'
 alias -g G='| grep --color=auto'
 alias -g LL="2>&1 | less"

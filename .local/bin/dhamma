@@ -1,0 +1,2 @@
+#!/bin/bash
+\du -a /mnt/Video/Dhamma | cut -f2- | dmenu -i -l 30 | xargs -I {} mpv "{}" --no-audio-display
