@@ -2,7 +2,7 @@
 
 shopt -s nullglob
 
-cd ~/Pictures/favs/
+cd ~/pictures/favs/
 
 while true; do
         files=()

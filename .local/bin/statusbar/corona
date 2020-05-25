@@ -1,8 +1,0 @@
-#!/usr/bin/sh
-
-grep "Ohio" ~/.cache/corona |
-	sed "s/\s*//g ; s/║//g ; s/│/;/g" |
-	awk -F';' '{print "$😷" $3 " (" $9") 💀 " $5 " ("$7"%)"}'
-
-
-
