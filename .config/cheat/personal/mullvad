@@ -1,0 +1,29 @@
+Specify your account
+mullvad account set ********
+
+Show account info
+mullvad account get
+
+List server locations
+mullvad relay list
+
+Select a location
+mullvad relay set location se mma
+
+Connect
+mullvad connect
+
+Disconnect
+mullvad disconnect
+
+Check your connection status
+mullvad status
+
+Auto-connect on start-up
+mullvad auto-connect set on
+
+To turn this off, run
+mullvad auto-connect set off
+
+Enable LAN access
+mullvad lan set allow

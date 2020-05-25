@@ -1,0 +1,6 @@
+Add User to a Group
+  usermod -a -G examplegroup exampleusername
+Add a User to Multiple Groups
+  usermod -a -G group1,group2,group3 exampleusername
+View All Groups on the System
+  getent group

@@ -1,0 +1,32 @@
+# Vim Cheats
+#
+# Remove tags, keep content
+yitvatp
+What this does is:
+  y - yanks
+  it - the inside of the tag
+  vat - selects the entire tag
+  p - pastes the previously yanked text over it
+
+# Calls man page for word under the cursor
+  K
+
+# Vim Calculator
+  1. In Insert mode, type Ctrl-r =
+  2. Type your operation
+  3. Hit Enter, and the result will be inserted under your cursor.
+
+# How to suspend (temporary exit) Vim to go back later
+In a Unix-like system, you can suspend a process that means pausing it and sending it to the background. You can use it to switch between Vim and terminal.
+  Ctrl + Z to suspend Vim (or any other foreground process)
+  fg sends it back into the foreground
+
+How to indent multiple lines?
+There's a special operator for indenting in Vim (:help >).
+  > indent the whole block to the right (visual mode)
+  < indent the whole block to the left (visual mode)
+  >> / << indent the current line (normal mode)
+  >ap (indent the whole paragraph, any text object works)
+  . to repeat it multiple times
+
+

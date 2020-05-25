@@ -1,0 +1,17 @@
+# You can add comments to these files with #
+b	~/.local/bin
+ch      ~/.cache
+cf	~/.config
+d	~/documents
+d	~/downloads
+h	~/
+ma	/www/nginx/notes/articles
+mc	/mnt/Data/Docs/Client
+mdt	/mnt/Data/Docs/tmp
+mm	~/music
+mn	/mnt
+mu	/mnt/usb
+nid	/mnt/Data/Docs/NID
+pp	~/pictures
+s	~/.local/src
+vv	~/video

@@ -1,0 +1,28 @@
+If you want to list all the files currently being tracked under the branch master, you could use this command:
+  git ls-tree -r master --name-only
+Merge selected files between branches
+  git merge --no-ff --no-commit branchX
+
+Let's say that your remote is git@xyz.git and you want its random_branch branch. The process should be as follows:
+
+    First check the list of your remotes by
+
+        git remote -v
+
+    If you don't have the git@xyz.git remote in the above command's output, you would add it by
+
+        git remote add xyz git@xyz.git
+
+    Now you can fetch the contents of that remote by
+
+        git fetch xyz
+
+    Now checkout the branch of that remote by
+
+        git checkout -b my_copy_random_branch xyz/random_branch
+
+    Check the branch list by
+
+        git branch -a
+
+The local branch my_copy_random_branch would be tracking the random_branch branch of your remote.
