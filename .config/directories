@@ -5,7 +5,7 @@ cf	~/.config
 d	~/documents
 d	~/downloads
 h	~/
-ma	/www/nginx/notes/articles
+ma	/mnt/www/nginx/notes/articles
 mc	/mnt/Data/Docs/Client
 mdt	/mnt/Data/Docs/tmp
 mm	~/music

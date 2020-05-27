@@ -41,10 +41,10 @@ cheatpaths:
 
   # Maybe your company or department maintains a repository of cheatsheets as
   # well. It's probably sensible to list those second.
-  - name: work
-    path: ~/.config/cheat/work
-    tags: [ work ]
-    readonly: false
+  # - name: work
+    # path: ~/.config/cheat/work
+    # tags: [ work ]
+    # readonly: false
 
   # If you have personalized cheatsheets, list them last. They will take
   # precedence over the more global cheatsheets.

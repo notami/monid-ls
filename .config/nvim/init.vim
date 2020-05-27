@@ -19,6 +19,7 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'ap/vim-css-color'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
 
 set bg=light
@@ -79,12 +80,15 @@ set undodir=~/.config/nvim/undodir
 	map <leader>s :!clear && shellcheck %<CR>
 
 " Move Line(s)
-	nnoremap <A-j> :m .+1<CR>==
-	nnoremap <A-k> :m .-2<CR>==
-	inoremap <A-j> <Esc>:m .+1<CR>==gi
-	inoremap <A-k> <Esc>:m .-2<CR>==gi
-	vnoremap <A-j> :m '>+1<CR>gv=gv
-	vnoremap <A-k> :m '<-2<CR>gv=gv
+	nnoremap <C-J> :m .+1<CR>==
+	nnoremap <C-K> :m .-2<CR>==
+	inoremap <C-J> <Esc>:m .+1<CR>==gi
+	inoremap <C-K> <Esc>:m .-2<CR>==gi
+	vnoremap <C-J> :m '>+1<CR>gv=gv
+	vnoremap <C-K> :m '<-2<CR>gv=gv
+
+" Call MarkdownPreview
+	map <leader>md <Plug>MarkdownPreview
 
 " Open my bibliography file in split
 	map <leader>b :vsp<space>$BIB<CR>
